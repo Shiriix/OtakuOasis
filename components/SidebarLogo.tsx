@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { GiSharpShuriken } from "react-icons/gi";
-
+import React from "react";
 const SidebarLogo = () => {
   const router = useRouter();
   return (
