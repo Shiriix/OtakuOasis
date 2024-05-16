@@ -4,6 +4,7 @@ interface LayoutProps {
 
 import React from "react";
 import Sidebar from "./Sidebar";
+import Followbar from "./Followbar";
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="h-screen bg-black">
@@ -16,6 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           >
             {children}
           </div>
+          <Followbar />
         </div>
       </div>
     </div>
