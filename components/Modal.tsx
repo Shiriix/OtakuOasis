@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 interface ModalProps {
   isOpen?: boolean;
@@ -11,7 +11,30 @@ interface ModalProps {
   disabled?: boolean;
 }
 
-const Modal = () => {
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  onSubmit,
+  title,
+  body,
+  footer,
+  actionLabel,
+  disabled,
+}) => {
+  const handleClose = useCallback(() => {
+    if (disabled) {
+      return;
+    }
+    onClose();
+  }, [disabled, onClose]);
+
+  const handleSubmit = useCallback(() => {
+    if (disabled) {
+      return;
+    }
+    onSubmit();
+  }, [disabled, onSubmit]);
+
   return <div></div>;
 };
 
